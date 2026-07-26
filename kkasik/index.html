@@ -21,26 +21,49 @@
 </head>
 
 <body class="selection:bg-primary/30 selection:text-primary overflow-hidden">
-    <!-- Ambient Animated Background Blobs -->
     <div class="ambient-blob blob-1"></div>
     <div class="ambient-blob blob-2"></div>
     <div class="ambient-blob blob-3"></div>
-
-    <!-- Loading Screen -->
-    <div id="loading-screen"
-        class="fixed inset-0 z-[9999] bg-[#020617] flex flex-col items-center justify-center transition-all duration-1000 ease-in-out">
-        <div class="flex items-center justify-center gap-8 mb-12 animate-fade-in-out">
-            <div class="relative w-24 h-24">
-                <img src="./loading.png" alt="Loading Logo 1" class="w-full h-full object-contain filter-game-glow" />
+    <div id="loading-screen" class="fixed inset-0 z-[9999] overflow-hidden">
+        <div class="ls-bg"></div>
+        <canvas id="ls-stars" class="absolute inset-0 w-full h-full"></canvas>
+        <div class="ls-grid"></div>
+        <div class="ls-shockwave"></div>
+        <div class="ls-shockwave" style="animation-delay:0.4s"></div>
+        <div class="ls-scan-beam"></div>
+        <div class="ls-hud ls-hud-tl"><span></span><span></span></div>
+        <div class="ls-hud ls-hud-tr"><span></span><span></span></div>
+        <div class="ls-hud ls-hud-bl"><span></span><span></span></div>
+        <div class="ls-hud ls-hud-br"><span></span><span></span></div>
+        <div class="ls-shard ls-shard-1"></div>
+        <div class="ls-shard ls-shard-2"></div>
+        <div class="ls-shard ls-shard-3"></div>
+        <div class="ls-shard ls-shard-4"></div>
+        <div class="ls-shard ls-shard-5"></div>
+        <div class="ls-shard ls-shard-6"></div>
+        <div class="ls-shard ls-shard-7"></div>
+        <div class="ls-shard ls-shard-8"></div>
+        <div class="ls-center">
+            <div class="ls-orbit-ring"></div>
+            <div class="ls-orbit-ring ls-orbit-ring-2"></div>
+            <div class="ls-logo-wrap">
+                <div class="ls-logo-1">
+                    <img src="./loading.png" alt="Logo KKA" class="ls-logo-img" />
+                    <div class="ls-logo-aura"></div>
+                </div>
+                <div class="ls-logo-2">
+                    <img src="./loading2.png" alt="Logo Smanda" class="ls-logo-img" />
+                    <div class="ls-logo-aura ls-logo-aura-2"></div>
+                </div>
             </div>
-            <div class="relative w-24 h-24">
-                <img src="./loading2.png" alt="Loading Logo 2" class="w-full h-full object-contain filter-game-glow" />
-            </div>
-        </div>
-        <div
-            class="w-72 h-2 bg-[#0f172a] rounded-full overflow-hidden relative shadow-[0_0_10px_rgba(0,0,0,0.5)] border border-white/5">
-            <div
-                class="absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-[#8083ff] to-[#d8b4fe] rounded-full animate-loading-line shadow-[0_0_15px_rgba(128,131,255,0.8)]">
+            <div class="ls-title" data-text="KKA SMANDA 26">KKA SMANDA 26</div>
+            <div class="ls-subtitle">Koding &amp; Kecerdasan Artificial</div>
+            <div class="ls-bar-wrap">
+                <div class="ls-bar-track">
+                    <div class="ls-bar-fill"></div>
+                    <div class="ls-bar-spark"></div>
+                </div>
+                <div class="ls-bar-label">INITIALIZING SYSTEM...</div>
             </div>
         </div>
     </div>
@@ -48,9 +71,11 @@
     <header
         class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-md h-20">
         <nav class="max-w-7xl mx-auto px-container-padding flex justify-between items-center h-full">
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-3">
+                <img src="./loading2.png" alt="KKA Logo"
+                    class="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(128,131,255,0.8)] transition-transform duration-300 hover:scale-110" />
                 <span class="font-display-lg text-headline-md font-extrabold text-on-surface">KKA <span
-                        class="text-primary">Smanda</span></span>
+                        class="text-primary">Smanda 26</span></span>
             </div>
             <div class="hidden md:flex items-center gap-8">
                 <a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
@@ -239,8 +264,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- ── Gallery Section ─────────────────────────────────── -->
         <section class="py-section-gap overflow-hidden">
             <div class="text-center mb-12 max-w-7xl mx-auto px-container-padding reveal-fade-up">
                 <div
@@ -250,8 +273,6 @@
                 <p class="font-body-base text-body-base text-on-surface-variant max-w-xl mx-auto">Sekilas perjalanan KKA
                     Smanda dalam setiap momen berharga.</p>
             </div>
-
-            <!-- Row 1: scroll left → right -->
             <div class="gallery-track-wrapper mb-5">
                 <div class="gallery-track gallery-track--ltr">
                     <div class="gallery-slide"><img src="./foto1.jpeg" alt="Foto 1" loading="lazy" /></div>
@@ -259,7 +280,6 @@
                     <div class="gallery-slide"><img src="./foto3.jpeg" alt="Foto 3" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto4.jpeg" alt="Foto 4" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto5.jpeg" alt="Foto 5" loading="lazy" /></div>
-                    <!-- duplicates for seamless loop -->
                     <div class="gallery-slide"><img src="./foto1.jpeg" alt="Foto 1" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto2.jpeg" alt="Foto 2" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto3.jpeg" alt="Foto 3" loading="lazy" /></div>
@@ -267,15 +287,12 @@
                     <div class="gallery-slide"><img src="./foto5.jpeg" alt="Foto 5" loading="lazy" /></div>
                 </div>
             </div>
-
-            <!-- Row 2: scroll right → left -->
             <div class="gallery-track-wrapper">
                 <div class="gallery-track gallery-track--rtl">
                     <div class="gallery-slide"><img src="./foto6.jpeg" alt="Foto 6" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto7.jpeg" alt="Foto 7" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto8.jpeg" alt="Foto 8" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto9.jpeg" alt="Foto 9" loading="lazy" /></div>
-                    <!-- duplicates for seamless loop -->
                     <div class="gallery-slide"><img src="./foto6.jpeg" alt="Foto 6" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto7.jpeg" alt="Foto 7" loading="lazy" /></div>
                     <div class="gallery-slide"><img src="./foto8.jpeg" alt="Foto 8" loading="lazy" /></div>
@@ -311,7 +328,6 @@
                 </div>
             </div>
         </section>
-        <!-- CTA Section -->
         <section class="max-w-7xl mx-auto px-container-padding py-section-gap">
             <div class="glass-panel p-16 rounded-[3rem] relative overflow-hidden text-center reveal-fade-up">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[120px] -mr-48 -mt-48"></div>

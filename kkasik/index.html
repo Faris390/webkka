@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>KKA Smanda</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Geist:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <script src="./tailwind.config.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="selection:bg-primary/30 selection:text-primary overflow-hidden">
+    <!-- Ambient Animated Background Blobs -->
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen"
+        class="fixed inset-0 z-[9999] bg-[#020617] flex flex-col items-center justify-center transition-all duration-1000 ease-in-out">
+        <div class="flex items-center justify-center gap-8 mb-12 animate-fade-in-out">
+            <div class="relative w-24 h-24">
+                <img src="./loading.png" alt="Loading Logo 1" class="w-full h-full object-contain filter-game-glow" />
+            </div>
+            <div class="relative w-24 h-24">
+                <img src="./loading2.png" alt="Loading Logo 2" class="w-full h-full object-contain filter-game-glow" />
+            </div>
+        </div>
+        <div
+            class="w-72 h-2 bg-[#0f172a] rounded-full overflow-hidden relative shadow-[0_0_10px_rgba(0,0,0,0.5)] border border-white/5">
+            <div
+                class="absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-[#8083ff] to-[#d8b4fe] rounded-full animate-loading-line shadow-[0_0_15px_rgba(128,131,255,0.8)]">
+            </div>
+        </div>
+    </div>
+
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-md h-20">
+        <nav class="max-w-7xl mx-auto px-container-padding flex justify-between items-center h-full">
+            <div class="flex items-center gap-2">
+                <span class="font-display-lg text-headline-md font-extrabold text-on-surface">KKA <span
+                        class="text-primary">Smanda</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
+                <a class="text-on-surface-variant font-body-base text-body-base hover:text-primary transition-colors"
+                    href="https://forms.gle/BDYKTyywHRB44R1y8">Join Us</a>
+                <a class="text-on-surface-variant font-body-base text-body-base hover:text-primary transition-colors"
+                    href="https://wa.me/6285815953668">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-3 mr-4">
+                    <button class="p-2 hover:bg-white/5 transition-all duration-300 rounded-full">
+                        <span class="material-symbols-outlined text-on-surface-variant">terminal</span>
+                    </button>
+                    <button class="p-2 hover:bg-white/5 transition-all duration-300 rounded-full">
+                        <span class="material-symbols-outlined text-on-surface-variant">code</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="fixed top-20 left-0 right-0 z-10 ticker-wrap h-10 flex items-center">
+        <div
+            class="ticker-content flex gap-12 font-label-sm text-label-sm text-primary uppercase tracking-widest items-center pr-12">
+            <span>• Registration for KKA Smanda 2026 is now OPEN</span>
+            <span>• Congratulations to Smanda OSN Team for Winning National Olympiad</span>
+            <span>• Join our Weekly Activities every Wednesday & Thursday at 3.30 PM</span>
+            <span>• Registration for KKA Smanda 2026 is now OPEN</span>
+            <span>• Registration for KKA Smanda 2026 is now OPEN</span>
+            <span>• Congratulations to Smanda OSN Team for Winning National Olympiad</span>
+            <span>• Join our Weekly Activities every Wednesday & Thursday at 3.30 PM</span>
+            <span>• Registration for KKA Smanda 2026 is now OPEN</span>
+        </div>
+    </div>
+    <main class="relative pt-32">
+        <section
+            class="relative max-w-6xl mx-auto px-container-padding py-section-gap flex flex-col items-center text-center">
+            <div
+                class="inline-block px-4 py-1.5 mb-6 glass-panel rounded-full text-primary font-label-sm text-label-sm border border-primary/20 animate-pulse reveal-fade-up">
+                NOW RECRUITING NEW MEMBERS
+            </div>
+            <h1 class="font-display-lg text-display-lg mb-6 max-w-4xl tracking-tight leading-none reveal-fade-up"
+                style="transition-delay: 0.1s">
+                Eksplorasi Dunia <br />
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-glow">Informatika
+                    &amp; Teknologi</span>
+            </h1>
+            <p class="font-body-base text-body-base text-on-surface-variant max-w-2xl mb-10 leading-relaxed reveal-fade-up"
+                style="transition-delay: 0.2s">
+                Wadah berkumpulnya Anomali Smanda, Kami disini sebagai Tim/Group Belajar yang siap ada untuk saling
+                belajar. Menembus batas kode dan kreativitas digital.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-20 reveal-fade-up" style="transition-delay: 0.3s">
+                <a href="https://forms.gle/BDYKTyywHRB44R1y8" target="_blank" rel="noopener noreferrer"
+                    class="btn-primary text-white font-bold px-10 py-4 rounded-xl text-lg flex items-center gap-2 relative overflow-hidden group">
+                    <span class="relative z-10 flex items-center gap-2">
+                        Gabung Sekarang
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </span>
+                </a>
+                <a href="#jadwal"
+                    class="glass-panel text-on-surface font-bold px-10 py-4 rounded-xl text-lg hover:bg-white/10 transition-all text-center flex items-center justify-center">
+                    Jadwal & Kegiatan
+                </a>
+            </div>
+            <div class="w-full max-w-3xl glass-panel rounded-2xl overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] duration-500 reveal-fade-up animate-float"
+                style="transition-delay: 0.4s">
+                <div class="bg-surface-container flex items-center justify-between px-4 py-3 border-b border-white/5">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-error"></div>
+                        <div class="w-3 h-3 rounded-full bg-secondary"></div>
+                        <div class="w-3 h-3 rounded-full bg-tertiary-container"></div>
+                    </div>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant opacity-60">main.js</span>
+                </div>
+                <div class="p-8 text-left font-code-snippet text-code-snippet leading-relaxed overflow-x-auto">
+                    <pre><code class="block">
+<span class="syntax-keyword">const</span> <span class="syntax-variable">club</span> = {
+    <span class="syntax-variable">name</span>: <span class="syntax-string">'KKA Smanda'</span>,
+    <span class="syntax-variable">passion</span>: <span class="syntax-string">'Technology &amp; Coding'</span>,
+    <span class="syntax-variable">members</span>: <span class="syntax-string">'???'</span>,
+    <span class="syntax-variable">isAwesome</span>: <span class="syntax-keyword">true</span>,
+    <span class="syntax-variable">join</span>: () =&gt; {
+        <span class="syntax-variable">console</span>.<span class="syntax-variable">log</span>(<span class="syntax-string">'Welcome to the future!'</span>);
+    }
+};
+
+<span class="syntax-comment">// Eksekusi perjalananmu disini</span>
+<span class="syntax-variable">club</span>.<span class="syntax-variable">join</span>();
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+        <section class="max-w-7xl mx-auto px-container-padding py-section-gap">
+            <div class="text-center mb-16 reveal-fade-up">
+                <h2 class="font-display-lg text-headline-md mb-4">Core Competencies</h2>
+                <p class="font-body-base text-body-base text-on-surface-variant max-w-xl mx-auto">Kami fokus pada tiga
+                    pilar utama pengembangan teknologi di lingkungan sekolah.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div
+                    class="glass-panel p-8 rounded-3xl hover:bg-surface-container-high transition-all group flex flex-col h-full reveal-fade-left">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Coding &amp; Web</h3>
+                    <p class="font-body-base text-body-base text-on-surface-variant mb-6 flex-grow">Mempelajari
+                        fundamental pemrograman, pengembangan web modern, hingga software engineering yang scalable.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase">Next.js</span>
+                        <span
+                            class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase">Python</span>
+                    </div>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl hover:bg-surface-container-high transition-all group border-t-2 border-secondary/30 flex flex-col h-full reveal-fade-up"
+                    style="transition-delay: 0.15s">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Artificial Intelligence</h3>
+                    <p class="font-body-base text-body-base text-on-surface-variant mb-6 flex-grow">Implementasi machine
+                        learning, prompt engineering, dan pemanfaatan AI untuk efisiensi akademik.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase">LLMs</span>
+                        <span
+                            class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase">Data
+                            Science</span>
+                    </div>
+                </div>
+                <div
+                    class="glass-panel p-8 rounded-3xl hover:bg-surface-container-high transition-all group flex flex-col h-full reveal-fade-right">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-tertiary text-3xl">precision_manufacturing</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Robotics &amp; IoT</h3>
+                    <p class="font-body-base text-body-base text-on-surface-variant mb-6 flex-grow">Integrasi hardware
+                        dan software melalui Arduino, Raspberry Pi, dan pengembangan sistem otomasi pintar.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase">Arduino</span>
+                        <span
+                            class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase">Sensors</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="jadwal" class="max-w-7xl mx-auto px-container-padding py-section-gap">
+            <div class="text-center mb-12 reveal-fade-up">
+                <h2 class="font-display-lg text-headline-md mb-3">Jadwal Kegiatan</h2>
+            </div>
+            <div class="glass-panel rounded-3xl overflow-hidden reveal-fade-up">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[600px]">
+                        <thead>
+                            <tr class="border-b border-white/10 bg-white/5">
+                                <th
+                                    class="text-left px-6 py-4 text-primary font-label-sm text-label-sm uppercase tracking-widest">
+                                    Hari</th>
+                                <th
+                                    class="text-left px-6 py-4 text-primary font-label-sm text-label-sm uppercase tracking-widest">
+                                    Waktu</th>
+                                <th
+                                    class="text-left px-6 py-4 text-primary font-label-sm text-label-sm uppercase tracking-widest">
+                                    Tempat</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr class="hover:bg-white/5 transition-colors group">
+                                <td class="px-6 py-4 font-semibold text-on-surface">Rabu</td>
+                                <td class="px-6 py-4 text-on-surface-variant">15:30 – Selesai</td>
+                                <td class="px-6 py-4 text-on-surface-variant">Lab Komputer 2</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition-colors group">
+                                <td class="px-6 py-4 font-semibold text-on-surface">Kamis</td>
+                                <td class="px-6 py-4 text-on-surface-variant">15:30 – Selesai</td>
+                                <td class="px-6 py-4 text-on-surface-variant">Lab Komputer 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Gallery Section ─────────────────────────────────── -->
+        <section class="py-section-gap overflow-hidden">
+            <div class="text-center mb-12 max-w-7xl mx-auto px-container-padding reveal-fade-up">
+                <div
+                    class="inline-block px-4 py-1.5 mb-4 glass-panel rounded-full text-tertiary font-label-sm text-label-sm border border-tertiary/20 uppercase tracking-widest">
+                    Momen Kami</div>
+                <h2 class="font-display-lg text-headline-md mb-3">Galeri Kegiatan</h2>
+                <p class="font-body-base text-body-base text-on-surface-variant max-w-xl mx-auto">Sekilas perjalanan KKA
+                    Smanda dalam setiap momen berharga.</p>
+            </div>
+
+            <!-- Row 1: scroll left → right -->
+            <div class="gallery-track-wrapper mb-5">
+                <div class="gallery-track gallery-track--ltr">
+                    <div class="gallery-slide"><img src="./foto1.jpeg" alt="Foto 1" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto2.jpeg" alt="Foto 2" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto3.jpeg" alt="Foto 3" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto4.jpeg" alt="Foto 4" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto5.jpeg" alt="Foto 5" loading="lazy" /></div>
+                    <!-- duplicates for seamless loop -->
+                    <div class="gallery-slide"><img src="./foto1.jpeg" alt="Foto 1" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto2.jpeg" alt="Foto 2" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto3.jpeg" alt="Foto 3" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto4.jpeg" alt="Foto 4" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto5.jpeg" alt="Foto 5" loading="lazy" /></div>
+                </div>
+            </div>
+
+            <!-- Row 2: scroll right → left -->
+            <div class="gallery-track-wrapper">
+                <div class="gallery-track gallery-track--rtl">
+                    <div class="gallery-slide"><img src="./foto6.jpeg" alt="Foto 6" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto7.jpeg" alt="Foto 7" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto8.jpeg" alt="Foto 8" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto9.jpeg" alt="Foto 9" loading="lazy" /></div>
+                    <!-- duplicates for seamless loop -->
+                    <div class="gallery-slide"><img src="./foto6.jpeg" alt="Foto 6" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto7.jpeg" alt="Foto 7" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto8.jpeg" alt="Foto 8" loading="lazy" /></div>
+                    <div class="gallery-slide"><img src="./foto9.jpeg" alt="Foto 9" loading="lazy" /></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-container-padding">
+                <div class="flex flex-wrap justify-center gap-8 md:gap-12 reveal-fade-up">
+                    <div class="stat-bubble reveal-fade-up" style="transition-delay:0s">
+                        <div class="text-3xl font-extrabold text-primary mb-1">???</div>
+                        <div class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Members
+                        </div>
+                    </div>
+                    <div class="stat-bubble reveal-fade-up" style="transition-delay:0.15s">
+                        <div class="text-3xl font-extrabold text-secondary mb-1">20++</div>
+                        <div class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Projects
+                        </div>
+                    </div>
+                    <div class="stat-bubble reveal-fade-up" style="transition-delay:0.3s">
+                        <div class="text-3xl font-extrabold text-tertiary mb-1">???++</div>
+                        <div
+                            class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold text-center leading-tight px-2">
+                            Member Achievements</div>
+                    </div>
+                    <div class="stat-bubble reveal-fade-up" style="transition-delay:0.45s">
+                        <div class="text-3xl font-extrabold text-primary mb-1">4</div>
+                        <div class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Division
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="max-w-7xl mx-auto px-container-padding py-section-gap">
+            <div class="glass-panel p-16 rounded-[3rem] relative overflow-hidden text-center reveal-fade-up">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[120px] -mr-48 -mt-48"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 blur-[120px] -ml-48 -mb-48"></div>
+                <h2 class="font-display-lg text-headline-md mb-6 relative z-10">Siap menjadi bagian dari <br /> masa
+                    depan digital?</h2>
+                <p class="text-on-surface-variant font-body-base text-body-base mb-10 max-w-xl mx-auto relative z-10">
+                    Tidak perlu jadi ahli untuk memulai. Yang terpenting adalah kemauan untuk terus bereksplorasi dan
+                    berkolaborasi.
+                </p>
+                <a href="https://forms.gle/BDYKTyywHRB44R1y8" target="_blank" rel="noopener noreferrer"
+                    class="btn-primary text-white font-bold px-12 py-5 rounded-2xl text-xl relative z-10 shadow-lg inline-block">
+                    Daftar KKA Smanda 2026
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-surface-container-lowest border-t border-white/5 py-section-gap mt-section-gap">
+        <div class="max-w-7xl mx-auto px-container-padding grid grid-cols-1 md:grid-cols-4 gap-gutter">
+            <div class="md:col-span-1">
+                <div class="font-display-lg text-headline-md font-bold text-primary mb-6">KKA Smanda</div>
+                <p class="font-body-base text-body-base text-on-surface-variant mb-6">
+                    Koding &amp; Kecerdasan Artifisal SMA Negeri 1 Pandaan. Menempa talenta digital masa depan dari
+                    bangku sekolah.
+                </p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface hover:text-primary transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined">public</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-on-surface hover:text-primary transition-all"
+                        href="#">
+                        <span class="material-symbols-outlined">hub</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-label-sm text-label-sm font-bold text-primary mb-6 uppercase tracking-wider">Socials
+                </h4>
+                <ul class="space-y-4">
+                    <li><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-base"
+                            href="https://www.instagram.com/kka.smanda?igsh=MTVyZnUyNng2ZDN0Mw==ttps://www.instagram.com/kka.smanda?igsh=MTVyZnUyNng2ZDN0Mw==">Instagram</a>
+                    </li>
+                    <li><a class="text-on-surface-variant hover:text-on-surface transition-colors fon-body-base"
+                            href="https://wa.me/6285815953668">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-container-padding pt-16 mt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-on-surface-variant font-label-sm text-label-sm opacity-60">
+                © 2026 KKA Smanda. All rights reserved.
+            </div>
+
+            <div
+                class="flex items-center gap-2 px-6 py-2 glass-panel rounded-full border border-white/10 hover:border-primary/30 transition-all duration-500 group cursor-default relative overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(128,131,255,0.2)] hover:-translate-y-1">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-tertiary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                </div>
+                <span class="text-on-surface-variant text-sm relative z-10 font-medium">Developed</span>
+                <span class="text-on-surface-variant text-sm relative z-10 font-medium">by</span>
+                <a href="https://www.instagram.com/risshyt.css?igsh=MWU0Z2JoeWc4dG0zag=="
+                    class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary relative z-10 text-glow text-[15px] tracking-wide group-hover:scale-105 transition-transform duration-300">
+                    @risshyt.css
+                </a>
+            </div>
+
+            <div class="flex gap-6 text-on-surface-variant font-label-sm text-label-sm opacity-60">
+                <a href="#" class="hover:text-primary transition-colors duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-primary transition-colors duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

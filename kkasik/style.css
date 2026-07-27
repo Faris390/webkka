@@ -1552,10 +1552,227 @@ footer::before {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
+/* ── Struktur Organisasi ────────────────────────────────────────────── */
+.org-chart {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.org-bottom-row {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    width: 100%;
+}
+.org-card {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    width: 220px;
+    position: relative;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.org-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 40px -10px rgba(128,131,255,0.2);
+}
+.org-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+.org-avatar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+.org-card:hover .org-avatar::after {
+    transform: translateX(100%);
+}
+.org-name {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    margin-bottom: 0.25rem;
+}
+.org-role {
+    font-family: 'Geist', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+/* ── Connecting Lines with Animation ── */
+.org-lines {
+    position: relative;
+    height: 60px;
+    width: 300px; /* 220px card width + 80px gap = 300px between centers */
+    margin: 0 auto;
+}
+.line-vertical, .line-horizontal-left, .line-horizontal-right, .line-vertical-left, .line-vertical-right {
+    position: absolute;
+    background: rgba(255,255,255,0.15);
+}
+.line-vertical {
+    width: 2px;
+    height: 30px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+.line-horizontal-left, .line-horizontal-right {
+    height: 2px;
+    width: 50%;
+    top: 30px;
+    overflow: hidden;
+}
+.line-horizontal-left { left: 0; }
+.line-horizontal-right { right: 0; }
+
+.line-vertical-left, .line-vertical-right {
+    width: 2px;
+    height: 30px;
+    top: 30px;
+    overflow: hidden;
+}
+.line-vertical-left { left: 0; }
+.line-vertical-right { right: 0; }
+
+/* Animated glow on lines */
+.line-vertical::after, .line-horizontal-left::after, .line-horizontal-right::after, .line-vertical-left::after, .line-vertical-right::after {
+    content: '';
+    position: absolute;
+    background: #8083ff;
+    box-shadow: 0 0 10px #8083ff, 0 0 20px #8083ff;
+    border-radius: 99px;
+}
+.line-vertical::after {
+    width: 100%;
+    height: 15px;
+    top: -15px;
+    left: 0;
+    animation: line-flow-1 4s infinite linear;
+}
+.line-horizontal-left::after {
+    width: 25px;
+    height: 100%;
+    top: 0;
+    right: -25px; /* start at center */
+    animation: line-flow-2-left 4s infinite linear;
+}
+.line-horizontal-right::after {
+    width: 25px;
+    height: 100%;
+    top: 0;
+    left: -25px; /* start at center */
+    animation: line-flow-2-right 4s infinite linear;
+}
+.line-vertical-left::after, .line-vertical-right::after {
+    width: 100%;
+    height: 15px;
+    top: -15px;
+    left: 0;
+    animation: line-flow-3 4s infinite linear;
+}
+
+@keyframes line-flow-1 {
+    0% { top: -15px; opacity: 0; }
+    5% { opacity: 1; }
+    25% { top: 100%; opacity: 0; }
+    100% { top: 100%; opacity: 0; }
+}
+@keyframes line-flow-2-left {
+    0%, 20% { right: -25px; opacity: 0; }
+    25% { opacity: 1; }
+    50% { right: 100%; opacity: 0; }
+    100% { right: 100%; opacity: 0; }
+}
+@keyframes line-flow-2-right {
+    0%, 20% { left: -25px; opacity: 0; }
+    25% { opacity: 1; }
+    50% { left: 100%; opacity: 0; }
+    100% { left: 100%; opacity: 0; }
+}
+@keyframes line-flow-3 {
+    0%, 45% { top: -15px; opacity: 0; }
+    50% { opacity: 1; }
+    75% { top: 100%; opacity: 0; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* ── Org Card Custom Animations ── */
+.org-card-pembina {
+    animation: org-float 4s ease-in-out infinite alternate;
+}
+.org-card-ketua {
+    animation: org-pulse 4s ease-in-out infinite alternate 1s; /* delayed so they don't sync completely */
+}
+.org-card-waka {
+    animation: org-swing 5s ease-in-out infinite alternate 0.5s;
+}
+
+@keyframes org-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
+@keyframes org-pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); }
+}
+@keyframes org-swing {
+    0% { transform: rotate(-2deg); }
+    100% { transform: rotate(2deg); }
+}
+
+/* ── Web Developer Special Card ── */
+.org-card-webdev {
+    animation: org-levitate 6s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+@keyframes org-levitate {
+    0% { transform: translateY(0) rotate(0deg) scale(1); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+    50% { transform: translateY(-8px) rotate(1deg) scale(1.02); box-shadow: 0 20px 40px -10px rgba(128,131,255,0.15); }
+    100% { transform: translateY(-4px) rotate(-1deg) scale(1); box-shadow: 0 15px 35px -10px rgba(162,0,255,0.1); }
+}
+
+/* Pause animations on hover */
+.org-card:hover, .org-card-webdev:hover {
+    animation-play-state: paused !important;
+}
+.org-card:hover {
+    transform: translateY(-5px) scale(1.05) rotate(0deg) !important;
+}
+.org-card-webdev:hover {
+    transform: translateY(-5px) scale(1.03) !important;
+    box-shadow: 0 25px 50px -12px rgba(128,131,255,0.25), inset 0 0 20px rgba(128,131,255,0.1) !important;
+}
+
 /* ── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 768px) {
     .stat-bubble {
         width: 140px;
         height: 140px;
     }
+    .org-bottom-row { gap: 16px; }
+    .org-card { width: 140px; padding: 1rem; }
+    .org-lines { width: 156px; /* 140 + 16 */ }
+    .org-avatar { width: 50px; height: 50px; }
+    .org-name { font-size: 0.85rem; }
+    .org-role { font-size: 0.6rem; }
 }

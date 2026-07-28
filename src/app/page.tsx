@@ -35,7 +35,7 @@ export default function Home() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    if(errorMsg) setErrorMsg("");
+    if (errorMsg) setErrorMsg("");
   };
 
   const handleNextStep = (e: React.MouseEvent) => {
@@ -640,24 +640,51 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-16 relative z-10 reveal-fade-up" style={{ transitionDelay: "0.6s" }}>
-              <div className="org-card-webdev glass-panel group flex items-center p-3 rounded-full mx-auto relative overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 cursor-default">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+              <div className="text-center mb-6 flex justify-center">
+                <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#8083ff]"></span>
+                  <span className="org-role text-primary text-[10px] md:text-[12px] tracking-widest font-bold">WEB DEVELOPED BY:</span>
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+                <div className="org-card-webdev glass-panel group flex items-center p-3 rounded-full relative overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 cursor-default w-full md:w-auto max-w-[320px]">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
 
-                <div className="org-avatar-webdev shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors duration-300 shadow-[0_0_15px_rgba(128,131,255,0.2)] group-hover:shadow-[0_0_25px_rgba(128,131,255,0.5)]">
-                  <img src="/webdev.jpeg" alt="Web Developer" className="w-full h-full object-cover" />
+                  <div className="org-avatar-webdev shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors duration-300 shadow-[0_0_15px_rgba(128,131,255,0.2)] group-hover:shadow-[0_0_25px_rgba(128,131,255,0.5)]">
+                    <img src="/webdev.jpeg" alt="Faris Hidayat" className="w-full h-full object-cover" />
+                  </div>
+
+                  <div className="ml-4 md:ml-5 text-left pr-6 md:pr-10 relative z-10">
+                    <h3 className="font-display-lg text-headline-sm text-primary group-hover:text-white transition-colors duration-300 text-sm md:text-base font-bold">
+                      Faris Hidayat (XI-F1)
+                    </h3>
+                    <span className="block text-[10px] md:text-xs font-normal opacity-70 group-hover:opacity-100 transition-opacity text-on-surface-variant mt-0.5">
+                      @risshyt.css
+                    </span>
+                    <p className="org-role text-primary mt-1 text-[9px] md:text-[10px] tracking-widest font-semibold flex items-center gap-1.5">
+                      DEVELOPER
+                    </p>
+                  </div>
                 </div>
 
-                <div className="ml-4 md:ml-5 text-left pr-6 md:pr-10 relative z-10">
-                  <h3 className="font-display-lg text-headline-sm text-primary group-hover:text-white transition-colors duration-300 text-sm md:text-base font-bold">
-                    Faris Hidayat (XI-F1)
-                  </h3>
-                  <span className="block text-[10px] md:text-xs font-normal opacity-70 group-hover:opacity-100 transition-opacity text-on-surface-variant mt-0.5">
-                    @risshyt.css
-                  </span>
-                  <p className="org-role text-primary mt-1 text-[9px] md:text-[10px] tracking-widest font-semibold flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#8083ff]"></span>
-                    WEB DEVELOPER
-                  </p>
+                <div className="org-card-webdev glass-panel group flex items-center p-3 rounded-full relative overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 cursor-default w-full md:w-auto max-w-[320px]">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+
+                  <div className="org-avatar-webdev shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/30 group-hover:border-primary transition-colors duration-300 shadow-[0_0_15px_rgba(128,131,255,0.2)] group-hover:shadow-[0_0_25px_rgba(128,131,255,0.5)]">
+                    <img src="/webdev2.jpeg" alt="Web Developer 2" className="w-full h-full object-cover" />
+                  </div>
+
+                  <div className="ml-4 md:ml-5 text-left pr-6 md:pr-10 relative z-10">
+                    <h3 className="font-display-lg text-headline-sm text-primary group-hover:text-white transition-colors duration-300 text-sm md:text-base font-bold">
+                      Syifan Maulana (XII-A1)
+                    </h3>
+                    <span className="block text-[10px] md:text-xs font-normal opacity-70 group-hover:opacity-100 transition-opacity text-on-surface-variant mt-0.5">
+                      @ci.pnnn
+                    </span>
+                    <p className="org-role text-primary mt-1 text-[9px] md:text-[10px] tracking-widest font-semibold flex items-center gap-1.5">
+                      DEVELOPER
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -750,11 +777,11 @@ export default function Home() {
                     </div>
 
                     {errorMsg && (
-                    <div className="text-center p-3 bg-error/20 border border-error/50 rounded-lg text-error font-medium text-sm mb-2">
-                      {errorMsg}
-                    </div>
-                  )}
-                  <div className="flex justify-end mt-4">
+                      <div className="text-center p-3 bg-error/20 border border-error/50 rounded-lg text-error font-medium text-sm mb-2">
+                        {errorMsg}
+                      </div>
+                    )}
+                    <div className="flex justify-end mt-4">
                       <button onClick={handleNextStep} className="btn-primary text-white font-bold px-8 py-3 rounded-xl shadow-lg border-none cursor-pointer flex items-center gap-2 hover:-translate-y-1 transition-transform">
                         Selanjutnya <span className="material-symbols-outlined text-sm">arrow_forward</span>
                       </button>
@@ -790,13 +817,13 @@ export default function Home() {
                         {["Instagram", "Stand Klub Mapel", "Teman", "Kakak Kelas", "Other"].map(source => (
                           <label key={source} className="flex items-center gap-3 cursor-pointer group">
                             <div className="relative flex items-center justify-center w-5 h-5">
-                              <input 
-                                type="radio" 
-                                name="infoSource" 
-                                value={source} 
-                                checked={formData.infoSource === source} 
-                                onChange={handleInputChange} 
-                                required 
+                              <input
+                                type="radio"
+                                name="infoSource"
+                                value={source}
+                                checked={formData.infoSource === source}
+                                onChange={handleInputChange}
+                                required
                                 className="appearance-none w-5 h-5 rounded-full border-2 border-white/30 checked:border-primary transition-colors cursor-pointer"
                               />
                               {formData.infoSource === source && (
@@ -823,11 +850,11 @@ export default function Home() {
                     )}
 
                     {errorMsg && (
-                    <div className="text-center p-3 bg-error/20 border border-error/50 rounded-lg text-error font-medium text-sm mb-2">
-                      {errorMsg}
-                    </div>
-                  )}
-                  <div className="flex justify-between mt-4">
+                      <div className="text-center p-3 bg-error/20 border border-error/50 rounded-lg text-error font-medium text-sm mb-2">
+                        {errorMsg}
+                      </div>
+                    )}
+                    <div className="flex justify-between mt-4">
                       <button type="button" onClick={() => setModalStep(1)} disabled={isSubmitting} className="px-6 py-3 rounded-xl text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors border-none bg-transparent cursor-pointer disabled:opacity-50">
                         Kembali
                       </button>
@@ -921,18 +948,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-container-padding pt-16 mt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-on-surface-variant font-label-sm text-label-sm opacity-60">
             © 2026 KKA Smanda. All rights reserved.
-          </div>
-
-          <div className="flex items-center gap-2 px-6 py-2 glass-panel rounded-full border border-white/10 hover:border-primary/30 transition-all duration-500 group cursor-default relative overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(128,131,255,0.2)] hover:-translate-y-1">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-tertiary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <span className="text-on-surface-variant text-sm relative z-10 font-medium">Developed</span>
-            <span className="text-on-surface-variant text-sm relative z-10 font-medium">by</span>
-            <a
-              href="https://www.instagram.com/risshyt.css"
-              className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary relative z-10 text-glow text-[15px] tracking-wide group-hover:scale-105 transition-transform duration-300"
-            >
-              @risshyt.css
-            </a>
           </div>
 
           <div className="flex gap-6 text-on-surface-variant font-label-sm text-label-sm opacity-60">

@@ -498,7 +498,7 @@ export default function Home() {
                     <td className="px-6 py-4 text-on-surface-variant">Lab Komputer 2</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors group">
-                    <td className="px-6 py-4 font-semibold text-on-surface">Kamis</td>
+                    <td className="px-6 py-4 font-semibold text-on-surface">Kamis (Opsional)</td>
                     <td className="px-6 py-4 text-on-surface-variant">15:30 – Selesai</td>
                     <td className="px-6 py-4 text-on-surface-variant">Lab Komputer 2</td>
                   </tr>

@@ -904,7 +904,7 @@ export default function Home() {
             <div className="font-display-lg text-headline-md font-bold text-primary mb-6">KKA Smanda</div>
             <p className="font-body-base text-body-base text-on-surface-variant mb-6">
               Koding & Kecerdasan Artifisal SMA Negeri 1 Pandaan. Menempa talenta digital masa depan dari bangku
-              sekolah.
+              sekolah menengah.
             </p>
             <div className="flex gap-4">
               <a

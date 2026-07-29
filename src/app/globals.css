@@ -92,6 +92,8 @@
 /* ── Base & Smooth Scroll ─────────────────────────────────────────── */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -99,6 +101,7 @@ body {
     color: #dae2fd;
     font-family: 'Geist', sans-serif;
     overflow-x: hidden;
+    width: 100%;
     position: relative;
     cursor: default;
 }
@@ -890,18 +893,19 @@ body::after {
     opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     background-size: 200px 200px;
+    transform: translateZ(0);
 }
 
 /* ── Ambient Animated Blobs ───────────────────────────────────── */
 .ambient-blob {
     position: fixed;
     border-radius: 50%;
-    filter: blur(100px);
     opacity: 0.35;
     z-index: -1;
     pointer-events: none;
     animation: blob-float 22s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .blob-1 {
@@ -976,8 +980,10 @@ body::after {
 /* ── Glass Panel (Premium) ────────────────────────────────────── */
 .glass-panel {
     background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transform: translateZ(0);
+    will-change: transform;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
         0 4px 24px rgba(0, 0, 0, 0.25),
@@ -1344,6 +1350,7 @@ header.scrolled {
     overflow: hidden;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+    transform: translateZ(0);
 }
 
 .gallery-track {
@@ -1748,9 +1755,9 @@ footer::before {
 .line-vertical::after, .line-horizontal-left::after, .line-horizontal-right::after, .line-vertical-left::after, .line-vertical-right::after {
     content: '';
     position: absolute;
-    background: #8083ff;
-    box-shadow: 0 0 10px #8083ff, 0 0 20px #8083ff;
+    background: #a5b4fc; /* Brighter color to replace the need for shadow */
     border-radius: 99px;
+    will-change: transform, opacity;
 }
 .line-vertical::after {
     width: 100%;
@@ -1834,12 +1841,13 @@ footer::before {
 .org-card-webdev {
     animation: org-levitate 6s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.05);
+    will-change: transform;
 }
 
 @keyframes org-levitate {
-    0% { transform: translateY(0) rotate(0deg) scale(1); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
-    50% { transform: translateY(-8px) rotate(1deg) scale(1.02); box-shadow: 0 20px 40px -10px rgba(128,131,255,0.15); }
-    100% { transform: translateY(-4px) rotate(-1deg) scale(1); box-shadow: 0 15px 35px -10px rgba(162,0,255,0.1); }
+    0% { transform: translateY(0) rotate(0deg) scale(1); }
+    50% { transform: translateY(-8px) rotate(1deg) scale(1.02); }
+    100% { transform: translateY(-4px) rotate(-1deg) scale(1); }
 }
 
 /* Pause animations on hover */
@@ -1856,12 +1864,42 @@ footer::before {
 
 /* ── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 768px) {
+    /* Performance Fix: Disable backdrop-filter to prevent frame drops and screen dimming on mobile */
+    .glass-panel, .feature-card, .stat-bubble, .ticker-wrap {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
+    .feature-card, .stat-bubble {
+        background: rgba(255, 255, 255, 0.06) !important;
+    }
+    .ticker-wrap {
+        background: rgba(8, 14, 36, 0.95) !important;
+    }
+    
+    /* Disable heavy line animations */
+    .line-vertical::after, .line-horizontal-left::after, .line-horizontal-right::after, .line-vertical-left::after, .line-vertical-right::after {
+        animation: none !important;
+        opacity: 0.8 !important;
+    }
+
     .stat-bubble {
         width: 140px;
         height: 140px;
     }
     .org-bottom-row { gap: 16px; }
-    .org-card { width: 140px; padding: 1rem; }
+    .org-card { 
+        width: 140px; 
+        padding: 1rem; 
+        animation: none !important;
+        transform: none !important;
+    }
+    .org-card-webdev {
+        animation: none !important;
+        transform: none !important;
+    }
     .org-lines { width: 156px; /* 140 + 16 */ }
     .org-avatar { width: 50px; height: 50px; }
     .org-name { font-size: 0.85rem; }
